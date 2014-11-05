@@ -4,7 +4,7 @@
   <title><![CDATA[Dara and Data]]></title>
   <link href="http://dmelass.github.io/atom.xml" rel="self"/>
   <link href="http://dmelass.github.io/"/>
-  <updated>2014-11-05T13:47:18-05:00</updated>
+  <updated>2014-11-05T15:01:20-05:00</updated>
   <id>http://dmelass.github.io/</id>
   <author>
     <name><![CDATA[Dara Elass]]></name>
@@ -57,7 +57,7 @@
 <p>My time on this project was limited - if I had more time, there are many things I would tweak/change, including:</p>
 
 <ul>
-<li>removing @usernames to exlucde direct conversations between users</li>
+<li>removing @usernames to exclude direct conversations between users</li>
 <li>adding retweets to the current clusters (without reclustering) and measure sizes changes</li>
 <li>adding retweets and reclustering to see if there would be changes in clustering</li>
 <li>trying different clustering techniques (e.g. DBSCAN) and comparing results</li>
