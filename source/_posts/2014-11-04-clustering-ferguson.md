@@ -44,7 +44,7 @@ The third cluster also had about 5,000 tweets. This cluster focused around Dr. C
 
 My time on this project was limited - if I had more time, there are many things I would tweak/change, including:
 
-* removing @usernames to exlucde direct conversations between users
+* removing @usernames to exclude direct conversations between users
 * adding retweets to the current clusters (without reclustering) and measure sizes changes
 * adding retweets and reclustering to see if there would be changes in clustering
 * trying different clustering techniques (e.g. DBSCAN) and comparing results
