@@ -4,7 +4,7 @@
   <title><![CDATA[Dara and Data]]></title>
   <link href="http://dmelass.github.io/atom.xml" rel="self"/>
   <link href="http://dmelass.github.io/"/>
-  <updated>2014-11-05T12:26:35-05:00</updated>
+  <updated>2014-11-05T13:47:18-05:00</updated>
   <id>http://dmelass.github.io/</id>
   <author>
     <name><![CDATA[Dara Elass]]></name>
@@ -58,9 +58,9 @@
 
 <ul>
 <li>removing @usernames to exlucde direct conversations between users</li>
-<li>adding retweets to current cluster to count how sizes change if clusters are the same</li>
+<li>adding retweets to the current clusters (without reclustering) and measure sizes changes</li>
 <li>adding retweets and reclustering to see if there would be changes in clustering</li>
-<li>trying different clustering techniques and comparing results</li>
+<li>trying different clustering techniques (e.g. DBSCAN) and comparing results</li>
 <li>focusing only on the hashtags, aside from #Ferguson and #FergusonOctober</li>
 <li>analyzing tweets by day and/or time to see if certain topics were talked about on certain days or times of the day than others</li>
 </ul>
