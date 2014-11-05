@@ -1,176 +1,204 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html>
 <head>
-  <meta charset="utf-8">
-  <title>Clustering Ferguson - My Octopress Blog</title>
-  <meta name="author" content="Your Name">
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	<meta charset="utf-8">
+	<title>Clustering Ferguson  | Dara and Data</title>
 
-  
-  <meta name="description" content="Test this is a test
-">
-  
+<meta name="author" content="Dara Elass"> 
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="For my most recent project at Metis, I analyzed tweets with #Ferguson or #FergusonOctober from October 11-13, also known as the organized Weekend of &hellip;"> <meta name="keywords" content="">
 
-  
-  <link rel="canonical" href="http://dmelass.github.io/blog/2014/11/04/clustering-ferguson">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="My Octopress Blog" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+	<link href="/atom.xml" rel="alternate" title="Dara and Data" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
 
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
+
+          if (id) {
+            el = $('#' + id);
+
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
+
+	
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">My Octopress Blog</a></h1>
-  
-    <h2>A blogging framework for hackers.</h2>
-  
-</hgroup>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">Dara and Data</a></h1>
+<h4></h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="https://www.google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:dmelass.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
+
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
+
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Clustering Ferguson</h2>
+	<div class="entry-content"><p>For my most recent project at <a href="http://www.thisismetis.com/">Metis</a>, I analyzed tweets with #Ferguson or #FergusonOctober from October 11-13, also known as the organized Weekend of Resistance where activists from around the country traveled to Ferguson to stand up against police brutality and to demand justice for the murder of Michael Brown and other innocent lives lost at the hands of the police.  I wanted to see what I could learn from clustering the tweets that I gathered.</p>
+
+<p>After collecting about 300,000 tweets (re-tweets included) through Twitter&rsquo;s API and Tweepy in Python, I separated the re-tweets from the unique tweets and created 75 clusters out of the 50,000 unique tweets, using MiniBatchKMeans in Python&rsquo;s sklearn module. In each cluster, I looked at the most important words by looking at 2-gram phrases/words with the highest <a href="https://en.wikipedia.org/wiki/Tf%E2%80%93idf">tf-idf</a> values. In this post, I will concentrate on the 3 biggest clusters.</p>
+
+<p style="text-align:center;"> <img src="/images/Cluster1.jpg"></p>
+
+<p>Tweets in this cluster include:</p>
+
+<blockquote><p>#FergusonOctober: Protesters march on police station in St Louis <a href="http://t.co/KnUKM4fDzF">http://t.co/KnUKM4fDzF</a></p>
+
+<p>Hundreds outside the police station. #FergusonOctober #BlackLivesMatter <a href="http://t.co/XHXeSKFjw4">http://t.co/XHXeSKFjw4</a></p>
+
+<p>People gathered outside the police station chanted his name and badge number #fergusonoctober #policingthepolice</p></blockquote>
+
+<p>The first cluster had around 14,000 tweets, and looking at the words with the highest tf-idf values, this cluster seems to focus on the police department. This is not surprising at all considering the entire movement is standing up against police brutality, and this weekend in particular focused on Ferguson&rsquo;s police department.  Furthermore, the Weekend of Resistance had a variety of events ranging from talks to sit-ins to protests, so this cluster was for tweets that focused on the march to the police station.</p>
+
+<p style="text-align:center;"> <img class="center" src="/images/Cluster2.jpg"></p>
+
+<p>Tweets in this cluster include:</p>
+
+<blockquote><p>Young Nigel waits for the rest of the #FergusonOctober marchers to catch up. <a href="http://t.co/p41U76eQOp">http://t.co/p41U76eQOp</a></p>
+
+<p>The story behind this AMAZING photo of young Nigel <a href="http://t.co/jUc55Xb2Eq">http://t.co/jUc55Xb2Eq</a> #FergusonOctober #ferguson <a href="http://t.co/o1T5BtQtZt">http://t.co/o1T5BtQtZt</a></p></blockquote>
+
+<p>The second cluster contained about 5,000 tweets. The name &ldquo;Nigel&rdquo; came up a lot in it. Not knowing off the top of my head who Nigel was, I Googled the name and came across <a href="http://www.dailykos.com/story/2014/10/11/1335898/-The-story-behind-this-AMAZING-photo-of-young-Nigel">this story and photo</a>.  I remember this photograph circling around the internet, but didn&rsquo;t know the name of the child was Nigel, so it was interesting to see this showing up in one of the biggest clusters.</p>
+
+<p style="text-align:center;"> <img src="/images/Cluster3.jpg"></p>
+
+<p>Tweets in this cluster include:</p>
+
+<blockquote><p>Dr. Cornel West arrested during #Ferguson protests: <a href="http://t.co/VLIaTzMmck">http://t.co/VLIaTzMmck</a></p>
+
+<p>#cornelwest arrested &amp; in police van now in act of civil disobedience #moralmonday #fergusonoctober <a href="http://t.co/hGDsrycAr4">http://t.co/hGDsrycAr4</a></p></blockquote>
+
+<p>The third cluster also had about 5,000 tweets. This cluster focused around Dr. Cornel West.  West is an important figure in the anti-racism movement, so it is expected that people would tweet about his involvement, and even more about his arrest. Through this clustering, I also learned that many people misspell Dr. West&rsquo;s first name.</p>
+
+<p>My time on this project was limited - if I had more time, there are many things I would tweak/change, including:</p>
+
+<ul>
+<li>removing @usernames to exlucde direct conversations between users</li>
+<li>adding retweets to current cluster to count how sizes change if clusters are the same</li>
+<li>adding retweets and reclustering to see if there would be changes in clustering</li>
+<li>trying different clustering techniques and comparing results</li>
+<li>focusing only on the hashtags, aside from #Ferguson and #FergusonOctober</li>
+<li>analyzing tweets by day and/or time to see if certain topics were talked about on certain days or times of the day than others</li>
 </ul>
-  
-<form action="https://www.google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:dmelass.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
-  
-  <header>
-    
-      <h1 class="entry-title">Clustering Ferguson</h1>
-    
-    
-      <p class="meta">
-        
 
 
-
-
-<time class='entry-date' datetime='2014-11-04T16:41:00-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>4:41 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-<div class="entry-content"><p>Test this is a test</p>
+<p>Code for this project can be found <a href="http://www.github.com/dmelass/fletcher">here</a>.</p>
 </div>
 
 
-  <footer>
-    <p class="meta">
-      
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
   
 
-<span class="byline author vcard">Posted by <span class="fn">Your Name</span></span>
 
-      
-
-
+<time datetime="2014-11-04T16:41:00-05:00" pubdate data-updated="true"></time></div>
+	
 
 
-<time class='entry-date' datetime='2014-11-04T16:41:00-05:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>4:41 pm</span></time>
-      
+	
+</div></article>
 
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://dmelass.github.io/blog/2014/11/04/clustering-ferguson/" data-via="" data-counturl="http://dmelass.github.io/blog/2014/11/04/clustering-ferguson/" >Tweet</a>
-  
-  
-  
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+<!---	<a class="addthis_counter addthis_pill_style"></a> &#8212;>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
 
-    
-    <p class="meta">
-      
-      
-    </p>
-  </footer>
-</article>
 
 </div>
+	<footer id="footer" class="inner">Copyright &copy; 2014
 
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2014/11/04/clustering-ferguson/">Clustering Ferguson</a>
-      </li>
-    
-  </ul>
-</section>
+    Dara Elass
 
-
-
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Your Name -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
+<br>
+Powered by Octopress.
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
 
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 
